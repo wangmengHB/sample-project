@@ -1,7 +1,7 @@
 
 let ExtractTextPlugin = require('extract-text-webpack-plugin');
 let merge = require('webpack-merge');
-let base = require('./webpack.base.config');
+let base = require('./webpack.base.conf');
 let path = require('path');
 let outputPath = path.join(__dirname, '../public/dev');
 let name = require('../package.json').name;
