@@ -4,13 +4,17 @@ let merge = require('webpack-merge');
 let base = require('./webpack.base.config');
 let path = require('path');
 let outputPath = path.join(__dirname, '../public/dev');
-
+let name = require('../package.json').name;
 let config = {
+    entry: {
+        [name]: './src/app.js',
+    },
     output: {
-        path: outputPath
+        path: outputPath,
+        filename: '[name].js'
     },
     plugins: [
-        new ExtractTextPlugin('css/[name].css')
+        new ExtractTextPlugin('[name].css')
     ]
 };
 

@@ -6,23 +6,16 @@ const name = require('../package.json').name;
 let outputPath = path.join(__dirname, '../public/', version);
 
 module.exports = {
-    entry: {
-        [name]: './src/app.js',
-    },
-    output: {
-        path: outputPath,
-        filename: 'js/[name].js'
-    },
     module: {
         rules: [{
             test: /\.jsx?$/,
             exclude: /node_modules/,
             loader: 'babel-loader'
         }, {
-            test: /\.(png|jpg|gif)$/,
+            test: /\.(svg|jpeg|png|jpg|gif)$/,
             loader: 'file-loader',
             options: {
-                name: '[name]_[hash].[ext]',
+                name: '[name]-[hash].[ext]',
                 outputPath: 'images/'
             } 
         }, {

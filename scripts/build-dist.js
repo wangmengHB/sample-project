@@ -5,10 +5,10 @@ let path = require('path');
 const version = require('../package.json').version;
 const name = require('../package.json').name;
 
-let resource_path = path.join(__dirname, '../public', version);
-let dest_path = path.join(__dirname, `../dist/${name}`);
+let resource_path = path.join(__dirname, '../public/release');
+let dest_path = path.join(__dirname, `../dist/${version}`);
 let lib_src_path = path.join(__dirname, '../lib');
-let lib_dest_path = path.join(__dirname, `../dist/${name}/lib`);
+let lib_dest_path = path.join(__dirname, `../dist/${version}/lib`);
 let filename = 'index.html';
 
 // empty the release folder first
@@ -23,7 +23,7 @@ fse.emptyDir(dest_path)
         // copy resource folder with version number to release folder
         // copy lib folder to release folder
         // create '../dist/${name}/index.html'
-        fse.copy(resource_path, path.join(dest_path, version))
+        fse.copy(resource_path, dest_path)
             .then(() => {
                 fse.copy(lib_src_path, lib_dest_path).then(() => {
                     createIndexHtml();

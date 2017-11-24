@@ -4,7 +4,7 @@ let http = require('http');
 let path = require('path');
 
 
-let currentDir = process.cwd();
+let currentDir = path.join(process.cwd(), './public/dev');
 app.use(express.static(currentDir));
 require('./router.js')(app);
 let server = http.createServer(app);

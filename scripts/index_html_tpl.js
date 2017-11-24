@@ -1,5 +1,6 @@
 const version = require('../package.json').version;
 const name = require('../package.json').name;
+let filename = `${name}-${version}`;
 
 let tpl = 
 `<!doctype html>
@@ -7,7 +8,7 @@ let tpl =
     <head>
         <meta charset="utf-8">
         <title>Sample Project</title>
-        <link rel="stylesheet" href="./${version}/css/${name}.min.css">
+        <link rel="stylesheet" href="./${filename}.min.css">
         <!--[if IE]>-->
         <script type="text/javascript" src="./lib/polyfill.min.js"></script>
         <!--<![endif]-->
@@ -21,7 +22,7 @@ let tpl =
     </head>
     <body>
         <div id="niswebui-app-container"></div>
-        <script type="text/javascript" src="./${version}/js/${name}.min.js"></script>
+        <script type="text/javascript" src="./${filename}.min.js"></script>
     </body>
 </html>`
 ;
