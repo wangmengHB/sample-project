@@ -8,7 +8,7 @@ let tpl =
     <head>
         <meta charset="utf-8">
         <title>Sample Project</title>
-        <link rel="stylesheet" href="./${filename}.min.css">
+        <link rel="stylesheet" href="./css/${filename}.min.css">
         <!--[if IE]>-->
         <script type="text/javascript" src="./lib/polyfill.min.js"></script>
         <!--<![endif]-->
@@ -22,7 +22,7 @@ let tpl =
     </head>
     <body>
         <div id="niswebui-app-container"></div>
-        <script type="text/javascript" src="./${filename}.min.js"></script>
+        <script type="text/javascript" src="./js/${filename}.min.js"></script>
     </body>
 </html>`
 ;

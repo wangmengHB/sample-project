@@ -17,7 +17,7 @@ let config = {
     },
     output: {
         path: outputPath,
-        filename: `[name].min.js`,
+        filename: `js/[name].min.js`,
         publicPath: publicPath
     },
     plugins: [
@@ -25,7 +25,7 @@ let config = {
             'process.env': { NODE_ENV: '"production"' }
         }),
         new ExtractTextPlugin({
-            filename: `[name].min.css`
+            filename: `css/[name].min.css`
         }),
         new UglifyJSPlugin(),
         new OptimizeCssAssetsPlugin()
