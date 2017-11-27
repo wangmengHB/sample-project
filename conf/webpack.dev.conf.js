@@ -5,16 +5,18 @@ let base = require('./webpack.base.conf');
 let path = require('path');
 let outputPath = path.join(__dirname, '../public/dev');
 let name = require('../package.json').name;
+let publicPath = require('../package.json').config.dev.publicPath;
 let config = {
     entry: {
         [name]: './src/app.js',
     },
     output: {
         path: outputPath,
-        filename: '[name].js'
+        filename: 'js/[name].js',
+        publicPath: publicPath
     },
     plugins: [
-        new ExtractTextPlugin('[name].css')
+        new ExtractTextPlugin('css/[name].css')
     ]
 };
 

@@ -1,7 +1,6 @@
-import $ from 'jquery';
-import moment from 'moment';
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Router from 'react-router';
-// import 'babel-polyfill';
+
 import './test.scss';
+import TEST from './component/images/path1/btn_Shutdown_highlight.png';
+
+let a = new Image();
+a.src = TEST;

@@ -9,6 +9,7 @@ let base = require('./webpack.base.conf');
 let path = require('path');
 let outputPath = path.join(__dirname, '../public/release');
 name = `${name}-${version}`;
+let publicPath = require('../package.json').config.production.publicPath;
 
 let config = {
     entry: {
@@ -16,7 +17,8 @@ let config = {
     },
     output: {
         path: outputPath,
-        filename: `[name].min.js`
+        filename: `[name].min.js`,
+        publicPath: publicPath
     },
     plugins: [
         new webpack.DefinePlugin({

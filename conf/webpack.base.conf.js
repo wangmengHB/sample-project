@@ -1,9 +1,6 @@
 let path = require('path');
 let webpack = require('webpack');
 let ExtractTextPlugin = require('extract-text-webpack-plugin');
-const version = require('../package.json').version;
-const name = require('../package.json').name;
-let outputPath = path.join(__dirname, '../public/', version);
 
 module.exports = {
     module: {
@@ -16,7 +13,7 @@ module.exports = {
             loader: 'file-loader',
             options: {
                 name: '[hash].[ext]',
-                outputPath: 'images/'
+                outputPath: 'asset/'
             } 
         }, {
             test: /\.scss$/,
@@ -31,6 +28,5 @@ module.exports = {
                 use: ['css-loader']
             })
         }]
-    },
-    plugins: []
+    }
 };
